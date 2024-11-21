@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>検索ページ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+
+        #search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        #search-bar {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #links-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            max-width: 600px;
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .link-box {
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .link-box:hover {
+            background-color: #e0e0e0;
+        }
+
+        .link-box a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .link-box img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="search-container">
+        <input id="search-bar" type="text" placeholder="Google検索">
+    </div>
+
+    <div id="links-container">
+        <div class="link-box" tabindex="1">
+            <a href="https://www.youtube.com" target="_blank">
+                YouTube
+            </a>
+        </div>
+        <div class="link-box" tabindex="2">
+            <a href="https://twitter.com" target="_blank">
+                Twitter
+            </a>
+        </div>
+        <div class="link-box" tabindex="3">
+            <a href="https://www.notion.so" target="_blank">
+                Notion
+            </a>
+        </div>
+        <div class="link-box" tabindex="4">
+            <a href="https://qiita.com" target="_blank">
+                Qiita
+            </a>
+        </div>
+        <div class="link-box" tabindex="5">
+            <a href="https://deeple.com" target="_blank">
+                Deeple
+            </a>
+        </div>
+        <div class="link-box" tabindex="6">
+            <a href="https://classroom.google.com" target="_blank">
+                Classroom
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Google検索機能を追加
+        document.getElementById('search-bar').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = document.getElementById('search-bar').value;
+                window.open('https://www.google.com/search?q=' + encodeURIComponent(query), '_blank');
+            }
+        });
+    </script>
+</body>
+</html>
