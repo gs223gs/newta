@@ -44,7 +44,7 @@
             background-color: #fff;
             border: 2px solid #ccc;
             border-radius: 10px;
-            padding: 20px;
+            padding: 15px; /* パディングを調整 */
             cursor: pointer;
             transition: background-color 0.3s;
         }
@@ -64,6 +64,19 @@
             height: 50px;
             margin-bottom: 10px;
         }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 800px) {
+            #links-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            #links-container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -72,8 +85,6 @@
     </div>
 
     <div id="links-container">
-
-        
         <div class="link-box" tabindex="1">
             <a href="https://www.youtube.com" target="_blank">
                 YouTube
@@ -104,13 +115,11 @@
                 Classroom
             </a>
         </div>
-    　  
         <div class="link-box" tabindex="7">
             <a href="https://www.notion.so/2d9868333c384001a5c63033af6424d3" target="_blank">
                 Notion
             </a>
         </div>
-        
         <div class="link-box" tabindex="8">
             <a href="https://chatgpt.com/?model=o1-mini" target="_blank">
                 ChatGPT
@@ -121,10 +130,6 @@
                 Github
             </a>
         </div>
-
-
-
-        
     </div>
 
     <script>
